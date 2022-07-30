@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.info.pdfreader.screens.home.Home"
+        android:label="Home"
+        tools:layout="@layout/home">
+        <action
+            android:id="@+id/action_home_to_folder"
+            app:destination="@id/folder" />
+        <action
+            android:id="@+id/action_home_to_addEditFolder"
+            app:destination="@id/addEditFolder" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditFolder"
+        android:name="com.info.pdfreader.screens.add_edit_folder.AddEditFolder"
+        android:label="AddEditFolder"
+        tools:layout="@layout/add_edit_folder"/>
+    <fragment
+        android:id="@+id/folder"
+        android:name="com.info.pdfreader.screens.folder.Folder"
+        android:label="Folder"
+        tools:layout="@layout/folder">
+        <action
+            android:id="@+id/action_folder_to_addPdf"
+            app:destination="@id/addPdf" />
+        <action
+            android:id="@+id/action_folder_to_pdfViewer"
+            app:destination="@id/pdfViewer" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPdf"
+        android:name="com.info.pdfreader.screens.add_pdf.AddPdf"
+        android:label="AddPdf"
+        tools:layout="@layout/add_pdf"/>
+    <fragment
+        android:id="@+id/pdfViewer"
+        android:name="com.info.pdfreader.screens.pdf_viewer.PdfViewer"
+        android:label="PdfViewer"
+        tools:layout="@layout/pdf_viewer"/>
+</navigation>

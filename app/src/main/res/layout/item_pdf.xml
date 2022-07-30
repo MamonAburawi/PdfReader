@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="pdf"
+            type="com.info.pdfreader.data.PdfData" />
+
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{onClick}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+
+
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_pdf"/>
+
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="10dp"/>
+
+
+            <TextView
+                android:id="@+id/pdfName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginEnd="50dp"
+                android:textStyle="normal"
+                android:layout_gravity="center"
+                android:text="@{pdf.title}"
+                android:textColor="@color/black"
+                tools:text="@string/pdf_name"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:textStyle="normal"
+            android:layout_gravity="bottom|end"
+            android:textColor="@color/black"
+            android:layout_marginEnd="8dp"
+            setDate="@{pdf.createDate}"
+            android:layout_marginBottom="8dp"
+            tools:text="2012-5-25"/>
+
+
+    </FrameLayout>
+
+
+
+</layout>

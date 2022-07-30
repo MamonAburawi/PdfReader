@@ -1,0 +1,81 @@
+package com.info.pdfreader.screens.add_edit_folder
+
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.info.pdfreader.data.FolderData
+import com.info.pdfreader.repository.PdfReaderRepository
+import com.info.pdfreader.utils.DataState
+import kotlinx.coroutines.launch
+
+class AddEditFolderViewModel : ViewModel() {
+
+    private val repository = PdfReaderRepository()
+
+    private val _inProgress = MutableLiveData<DataState?>()
+    val inProgress: LiveData<DataState?> = _inProgress
+
+
+    init {
+        _inProgress.value = null
+    }
+
+
+    fun addFolder(folder: FolderData) {
+        _inProgress.value = DataState.LOADING
+        viewModelScope.launch {
+            repository.addFolder(folder)
+                .addOnSuccessListener {
+                    _inProgress.value = DataState.SUCCESS
+
+                }
+                .addOnFailureListener { e ->
+                    _inProgress.value = DataState.ERROR
+
+                }
+        }
+    }
+
+
+    fun updateFolder(folder: FolderData) {
+        _inProgress.value = DataState.LOADING
+        viewModelScope.launch {
+           repository.updateFolder(folder)
+               .addOnSuccessListener {
+                   _inProgress.value = DataState.SUCCESS
+
+               }
+               .addOnFailureListener { e ->
+                   _inProgress.value = DataState.ERROR
+
+               }
+        }
+    }
+
+
+    fun deleteFolder(folder: FolderData) {
+        _inProgress.value = DataState.LOADING
+        viewModelScope.launch {
+            repository.deleteFolder(folder)
+            .addOnSuccessListener {
+                _inProgress.value = DataState.SUCCESS
+            }
+            .addOnFailureListener { e ->
+                _inProgress.value = DataState.ERROR
+            }
+        }
+    }
+
+
+    fun resetProgress(){
+        _inProgress.value = null
+    }
+
+
+
+
+
+
+
+}

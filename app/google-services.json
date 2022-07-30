@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "230083051280",
+    "project_id": "pdf-reader-57fac",
+    "storage_bucket": "pdf-reader-57fac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230083051280:android:1f44de25b895290e86ef95",
+        "android_client_info": {
+          "package_name": "com.info.pdfreader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "230083051280-7impb7d18eag288fu6adrkip5lnd5aau.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.info.pdfreader",
+            "certificate_hash": "c29340400924e742c5c2361f0977a5c24ed8bb74"
+          }
+        },
+        {
+          "client_id": "230083051280-bufgjjl05a65up1q9c1or98d7nir6sdo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsUlQKoybKfqPXW-BhTQW9-4oj_s-CRRo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "230083051280-bufgjjl05a65up1q9c1or98d7nir6sdo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
