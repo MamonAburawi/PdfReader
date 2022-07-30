@@ -177,8 +177,6 @@ class AddPdf : Fragment() {
 
 
 
-
-
     private fun categoryPickIntent() {
         val folder = viewModel.folders.value ?: emptyList()
         val titles = folder.map { it.title }.toTypedArray()

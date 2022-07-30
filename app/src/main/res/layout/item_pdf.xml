@@ -22,36 +22,34 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"
             android:layout_margin="5dp"
-            android:orientation="horizontal">
-
-
+            android:orientation="horizontal"
+            android:padding="5dp">
 
 
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_pdf"/>
+                android:src="@drawable/ic_pdf" />
 
 
             <Space
                 android:layout_width="10dp"
-                android:layout_height="10dp"/>
+                android:layout_height="10dp" />
 
 
             <TextView
                 android:id="@+id/pdfName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:layout_marginEnd="50dp"
-                android:textStyle="normal"
                 android:layout_gravity="center"
+                android:layout_marginEnd="50dp"
                 android:text="@{pdf.title}"
                 android:textColor="@color/black"
-                tools:text="@string/pdf_name"/>
+                android:textSize="18sp"
+                android:textStyle="normal"
+                tools:text="@string/pdf_name" />
 
 
         </LinearLayout>
@@ -63,7 +61,7 @@
             android:textStyle="normal"
             android:layout_gravity="bottom|end"
             android:textColor="@color/black"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="10dp"
             setDate="@{pdf.createDate}"
             android:layout_marginBottom="8dp"
             tools:text="2012-5-25"/>

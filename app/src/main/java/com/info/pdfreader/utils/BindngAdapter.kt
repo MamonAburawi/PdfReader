@@ -10,12 +10,12 @@ import java.util.*
 
 @BindingAdapter("setDate")
 fun setDate(tv: TextView, date: Date?) {
-    tv.text = DateFormat.format("h:m",date)
+    tv.text = DateFormat.format("yyyy-MM-dd",date)
 }
 
 
 
 @BindingAdapter("setCount")
 fun setPdfCount(tv: TextView, folder: FolderData){
-    tv.text = "Count: ${folder.pdfsCount}"
+    tv.text = "Files: ${folder.pdfsCount}"
 }

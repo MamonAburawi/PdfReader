@@ -36,7 +36,7 @@
            <ImageView
                android:layout_width="35dp"
                android:layout_height="35dp"
-               android:src="@drawable/ic_logo_pdf"/>
+               android:src="@drawable/ic_folder"/>
 
 
 
@@ -64,7 +64,7 @@
             android:layout_gravity="end"
             setCount="@{folder}"
             android:layout_marginEnd="5dp"
-            tools:text="Count: 50"/>
+            tools:text="Files 50"/>
 
 
 

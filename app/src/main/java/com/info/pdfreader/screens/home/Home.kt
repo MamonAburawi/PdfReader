@@ -31,14 +31,11 @@ class Home : Fragment() {
 
 
         setViews()
-
         setObserves()
 
 
 
-
         return binding.root
-
 
 
     }
