@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_nav_graph"
-    app:startDestination="@id/home">
+    app:startDestination="@id/splash">
 
     <fragment
         android:id="@+id/home"
@@ -44,4 +44,15 @@
         android:name="com.info.pdfreader.screens.pdf_viewer.PdfViewer"
         android:label="PdfViewer"
         tools:layout="@layout/pdf_viewer"/>
+    <fragment
+        android:id="@+id/splash"
+        android:name="com.info.pdfreader.screens.splash.Splash"
+        android:label="Splash"
+        tools:layout="@layout/splash">
+        <action
+            android:id="@+id/action_splash_to_home"
+            app:destination="@id/home"
+            app:popUpTo="@id/splash"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

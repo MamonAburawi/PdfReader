@@ -1,6 +1,8 @@
 package com.info.pdfreader.remote
 
 import android.net.Uri
+import android.util.Log
+import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.android.gms.tasks.Task
@@ -8,9 +10,12 @@ import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storage
 import com.info.pdfreader.data.FolderData
 import com.info.pdfreader.data.PdfData
+import com.info.pdfreader.screens.pdf_viewer.PdfViewer
+import com.info.pdfreader.utils.Constants
 import kotlinx.coroutines.tasks.await
 
 class PdfReaderDataBase() {
@@ -112,6 +117,12 @@ class PdfReaderDataBase() {
         }
         return uriRef.await()
     }
+
+
+
+    suspend fun getPdf( pdfUrl : String) =
+        storage.getReferenceFromUrl(pdfUrl).getBytes(Constants.MAX_BYTES_PDF)
+
 
 
 

@@ -12,7 +12,7 @@ class PdfController() : TypedEpoxyController<List<PdfData>>() {
     }
 
     interface ClickListener {
-        fun onClick(index: PdfData)
+        fun onClick(pdf: PdfData)
     }
 
     lateinit var clickListener: ClickListener

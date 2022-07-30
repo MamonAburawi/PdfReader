@@ -37,7 +37,6 @@ class Folder : Fragment() {
         setObserves()
 
 
-        showToast(requireContext(), folderId!!)
 
         return binding.root
 
@@ -102,9 +101,11 @@ class Folder : Fragment() {
 
     private fun setAdapter() {
         controller.clickListener = object: PdfController.ClickListener {
+
             /** on pdf click **/
-            override fun onClick(index: PdfData) {
-                findNavController().navigate(R.id.action_folder_to_pdfViewer)
+            override fun onClick(pdf: PdfData) {
+                val data = bundleOf(Constants.PDF_KEY to pdf)
+                findNavController().navigate(R.id.action_folder_to_pdfViewer , data)
             }
 
             // todo: edit pdf file this feature is not implemented yet.

@@ -39,11 +39,13 @@ fun showToast(context: Context,message: String){
     Toast.makeText(context,message,Toast.LENGTH_SHORT).show()
 }
 
-internal fun generateId(): String {
-    val allowedChars = ('A'..'Z') + ('a'..'z') + ('0'..'9')
-    fun getStr(l: Int): String = (1..l).map { allowedChars.random() }.joinToString("")
-    return getStr(8) // enter the length of id
-}
+//internal fun generateId(): String {
+//    val allowedChars = ('A'..'Z') + ('a'..'z') + ('0'..'9')
+//    fun getStr(l: Int): String = (1..l).map { allowedChars.random() }.joinToString("")
+//    return getStr(8) // enter the length of id
+//}
+
+internal fun generateId() = UUID.randomUUID().toString()
 
 
 

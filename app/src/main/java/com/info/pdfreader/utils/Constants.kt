@@ -8,4 +8,7 @@ object Constants {
     const val FOLDER_ID_KEY = "FolderId"
     const val PDF_KEY = "PdfKey"
     const val PDF_ID_KEY = "PdfIdKey"
+
+
+    const val MAX_BYTES_PDF : Long = 50000000 //50MB , you may change any size
 }

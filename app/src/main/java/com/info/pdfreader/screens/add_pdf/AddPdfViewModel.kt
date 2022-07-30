@@ -19,8 +19,8 @@ class AddPdfViewModel : ViewModel() {
 
     val folders = repository.observeFolders
 
-    private val _inProgress = MutableLiveData<DataState>()
-    val inProgress: LiveData<DataState> = _inProgress
+    private val _inProgress = MutableLiveData<DataState?>()
+    val inProgress: LiveData<DataState?> = _inProgress
 
 
 

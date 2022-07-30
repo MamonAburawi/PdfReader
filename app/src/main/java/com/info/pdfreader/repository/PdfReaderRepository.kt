@@ -57,6 +57,8 @@ class PdfReaderRepository {
 
     suspend fun deletePdf(pdfData: PdfData) = remote.deletePdf(pdfData)
 
+    suspend fun getPdf(pdfUri: String) = remote.getPdf(pdfUri)
+
     suspend fun uploadFile(uri: Uri, fileName: String, fileType: String) = remote.uploadFile(uri, fileName, fileType)
 
 

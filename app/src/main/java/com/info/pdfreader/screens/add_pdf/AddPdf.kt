@@ -154,8 +154,16 @@ class AddPdf : Fragment() {
                 showToast(requireContext(),"Pdf File Required!")
             }
             else{
-                //data validated , begin upload
-                uploadPdf()
+                // check if pdf name is exist
+                val folder = viewModel.folders.value?.find { it.id == folderId }!!
+                val titles = folder.pdfs.map { it.title }
+                if (name in titles){ // pdf name already exist!
+                    pdfName.error = "Pdf name is already exit!"
+                    pdfName.requestFocus()
+                }else {
+                    uploadPdf()
+                }
+
             }
         }
 
@@ -174,6 +182,8 @@ class AddPdf : Fragment() {
     private fun categoryPickIntent() {
         val folder = viewModel.folders.value ?: emptyList()
         val titles = folder.map { it.title }.toTypedArray()
+
+        // todo remove the duplicated titles.
 
         //get string array of novels from arraylist
         val novelsArray= arrayOfNulls<String>(folder.size)

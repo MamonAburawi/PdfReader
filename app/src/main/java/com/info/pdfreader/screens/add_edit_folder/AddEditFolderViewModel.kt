@@ -12,9 +12,13 @@ import kotlinx.coroutines.launch
 class AddEditFolderViewModel : ViewModel() {
 
     private val repository = PdfReaderRepository()
+    val folders = repository.observeFolders
 
     private val _inProgress = MutableLiveData<DataState?>()
     val inProgress: LiveData<DataState?> = _inProgress
+
+    private val _error = MutableLiveData<String?>()
+    val error: LiveData<String?> = _error
 
 
     init {
@@ -28,11 +32,9 @@ class AddEditFolderViewModel : ViewModel() {
             repository.addFolder(folder)
                 .addOnSuccessListener {
                     _inProgress.value = DataState.SUCCESS
-
                 }
                 .addOnFailureListener { e ->
                     _inProgress.value = DataState.ERROR
-
                 }
         }
     }
@@ -68,8 +70,10 @@ class AddEditFolderViewModel : ViewModel() {
     }
 
 
-    fun resetProgress(){
+
+    fun resetData(){
         _inProgress.value = null
+        _error.value = null
     }
 
 

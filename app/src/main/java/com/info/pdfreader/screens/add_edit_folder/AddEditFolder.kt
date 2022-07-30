@@ -145,9 +145,14 @@ class AddEditFolder : Fragment() {
                     folder?.let { viewModel.updateFolder(it) }
                 }else{
                     val folder = FolderData(generateId(), title = name)
-                    viewModel.addFolder(folder)
+                    val titles = viewModel.folders.value?.map { it.title }!!
+                    if (name in titles){ // folder name is already exist!
+                        folderName.error = "Folder name is already exist!"
+                        folderName.requestFocus()
+                    }else{
+                        viewModel.addFolder(folder)
+                    }
                 }
-
             }
         }
     }
