@@ -45,7 +45,7 @@ Simple app to read and save pdf files.
     
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
 
 
 ## 🛠 Skills
