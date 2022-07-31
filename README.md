@@ -8,13 +8,15 @@ Simple app to read and save pdf files.
 
 2- read pdf file.
 
-3- clear architecture.
+3- clean architecture.
 
 4- prevent duplicate pdf and folder names.
 
 5- save you pdf files inside folders.
 
 6- select exist folder to save your pdf file.
+
+7- display the number of pdf files inside the folder.
 
 # Extensions
 
